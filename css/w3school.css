@@ -1,0 +1,14 @@
+#Letter{
+	font-size: 5px;
+}
+#box{
+	background-color: #fff222;
+}
+.droptarget {
+    float: left; 
+    width: 30px; 
+    height: 30px;
+    margin: 3px;
+    padding: 10px;
+    border: 2px solid #aaaaaa;
+}
