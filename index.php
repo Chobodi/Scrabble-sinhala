@@ -1,81 +1,132 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/frank.css" rel="stylesheet">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
 
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
 
-<!-- BEGIN Letter Color when mouse enter-->
-	<script src="jquery-2.2.4.min.js">  </script>
-	<script src="js/jquery.js"></script>
-	<script src="js/frank.js"></script>
+	<!--     Fonts and icons     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 
-    <script type="text/javascript" src="js/TimeCircles.js"></script>
-    <link rel="stylesheet" href="css/TimeCircles.css" />
-    <script src="dist/sweetalert-dev.js"></script>
-  	<link rel="stylesheet" href="dist/sweetalert.css">
+	<!-- CSS Files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
 
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link href="assets/css/demo.css" rel="stylesheet" />
+    <link href="assets/css/w3school.css" rel="stylesheet" />
 </head>
 
-<body onload="checkWord_p1(); player1_alert(); p1_timer_onload();">
-	<div class="container">
-        <div class="page-header col-md-12"><!--Page Header  -->
-            <div class="header">
-                <div class="row">
-                    <div class="col-md-3">
-                        <button class="btn btn-default" id="Ply1" onclick="newGame()">PLAY NOW</button>
-                    </div>
-                    <div class="col-md-1">
-                    <img src="images/two.png" width="75px" height="100px">
-                    </div>
-                    <div class="col-md-4">
-                    <center><h2>SCRABBLE GAME</h2> </center>
-                    </div>
-                    <div class="col-md-1">
-                    <img src="images/three.png" width="75px" height="100px">
-                    </div>
-                    <div class="col-md-3">
-                    	<div id="PageOpenTimer" style="width: 350px; height: 87px; float: left"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+<div class="image-container set-full-height" style="background-image: url('assets/img/scrabble.jpg')">
+    <!--   Creative Tim Branding   -->
+    
+	<!--  Made With Get Shit Done Kit  -->
 		
-		<div class="raw">
-			<div class="col-md-3"><!-- PLAYER ONE PART -->
-				<?php include 'P1Characters.php'; ?>
-			</div>
+    <!--   Big container   -->
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
 
-			<div class="col-md-6">
-				<?php include 'gameBoard.php'; ?>			
-			</div>
+            <!--      Wizard container        -->
+            <div class="wizard-container">
 
-			<div class="col-md-3"><!-- PLAYER TWO PART -->
-				<?php include 'P2Characters.php'; ?>	
-				<table id="demo"></table>
-		        <div id="my"></div>
-		        <div id="temp1"></div>
-		        <div id="temp2"></div>
-		        <div id="temp3" value=""></div>
-		        <div id="out"></div>
-		        <p id="word"></p>
+                <div class="card wizard-card" data-color="red" id="wizardProfile">
+                    <form action="" method="">
+                <!--   colors: "blue", "green", "orange", "red"   -->
 
-		        <p id="ccc"></p>
-		        <p id="ddd"></p>
-		        <p id="eee"></p>
-		        <p id="fff"></p>
-		        <p id="ggg"></p>
-		        <p id="hhh"></p>
-		        <p id="qqq"></p>
-		        <audio id="sound1" src="audio/buttonok.mp3"></audio>
-		        <audio id="sound2" src="audio/error.mp3"></audio>
-		        <audio id="sound3" src="audio/timeout.mp3"></audio>
-			</div>
-		</div>
-	</div>
-    <script src="js/Timer_frank.js"></script>
+                    	<div class="wizard-header">
+                        	<h3>
+                        	   <b>WELCOME</b> TO SINHALA SCRABBLE <br>
+                        	   <small></small>
+                        	</h3>
+                    	</div>
+
+						<div class="wizard-navigation">
+							<ul>
+	                            <li><a href="#about" data-toggle="tab"></a></li>
+	                           
+	                        </ul>
+
+						</div>
+
+                        <div class="tab-content">
+                             <div class="tab-pane" id="about">
+                                <h4 class="info-text"> Please select your grade ?</h4>
+                                <div class="row">
+                                        <!--change index1.php-->
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="col-sm-4">
+                                            <div class="choice" >
+                                                
+                                                <a href="index1.php">
+
+                                                <img src="assets/img/grade12.png" alt="grade 1 and 2" style="width:100px;height:100px"></a>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="choice" >
+                                                 <a href="index1.php">
+                                                <img src="assets/img/grade34.png" alt="grade 3 and 4" style="width:100px;height:100px"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="choice">
+                                             <a href="index1.php">
+                                                <img src="assets/img/grade56.png" alt="grade 5 and 6" style="width:100px;height:100px"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="choice">
+                                                 <a href="index1.php">
+                                                <img src="assets/img/grade78.png" alt="grade 7 and 8" style="width:100px;height:100px"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="choice">
+                                                 <a href="index1.php">
+                                                <img src="assets/img/grade911.png" alt="grade 9 and 11" style="width:100px;height:100px"></a>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="choice">
+                                                <a href="index1.php">
+                                                <img src="assets/img/grade1213.png" alt="grade 12 13" style="width:100px;height:100px"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </form>
+                </div>
+            </div> <!-- wizard container -->
+        </div>
+        </div><!-- end row -->
+    </div> <!--  big container -->
+
+    <div class="footer">
+       
+    </div>
+
+</div>
+
 </body>
+
+	<!--   Core JS Files   -->
+	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+
+	<!--  Plugin for the Wizard -->
+	<script src="assets/js/gsdk-bootstrap-wizard.js"></script>
+
+	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+	<script src="assets/js/jquery.validate.min.js"></script>
+
 </html>
