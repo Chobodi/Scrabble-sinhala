@@ -18,6 +18,17 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="assets/css/demo.css" rel="stylesheet" />
     <link href="assets/css/w3school.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+<script src="https://use.fontawesome.com/710c522def.js"></script>
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+     <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 </head>
 
 <body>
@@ -39,10 +50,10 @@
                 <!--   colors: "blue", "green", "orange", "red"   -->
 
                     	<div class="wizard-header">
-                        	<h3>
+                        	<h5 class="center">
                         	   <b>WELCOME</b> TO SINHALA SCRABBLE <br>
                         	   <small></small>
-                        	</h3>
+                        	</h5>
                     	</div>
 
 						<div class="wizard-navigation">
@@ -55,7 +66,7 @@
 
                         <div class="tab-content">
                              <div class="tab-pane" id="about">
-                                <h4 class="info-text"> Please select your grade ?</h4>
+                                <h4 class="info-text"><small> Please select your grade </small></h4>
                                 <div class="row">
                                         <!--change index1.php-->
                                     <div class="col-sm-10 col-sm-offset-1">
@@ -100,6 +111,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="center">
+                             <a href="fileupload.php" input id="btnprof2" type='submit' class="waves-effect blue waves-light btn " name='Dictionary' value='Dictionary' /> Dictionary </a>
+                                </div>
                                 </div>
                             </div>                            
                         </div>
