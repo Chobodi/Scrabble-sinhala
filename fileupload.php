@@ -17,7 +17,7 @@
 </style>
 <body>
 
-<div class="container " id="suggestwords" style="background-image: url('assets/img/scrabble.jpg')" >
+<div class="container " id="suggestwords" style="background-image: url('')" >
     <div class="row">
     	<div id="redcontent1">
       <div class="col s6" >
@@ -101,7 +101,7 @@
 								 
 								foreach( $g_books as $book )
 								{
-								echo $book['COMBINATION'];
+								echo $book['COMBINATION'].'<br>';
 								}
 
 								?>
