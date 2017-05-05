@@ -45,7 +45,7 @@
             <div class="wizard-container">
 
                 <div class="card wizard-card" data-color="black" id="wizardProfile">
-                    <form action="login.php" method="POST">
+                    <form action="index.php" method="POST">
                 <!--        You can switch ' data-color="orange" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
 
                       <div class="wizard-header">
@@ -98,7 +98,7 @@
                             <br>
                             <br>
                             <div>
-                               <center><i>Still don't have an account</i><b><a href="login.php"> Register </b></a></center>
+                               <center><i>Still don't have an account</i><b><a href="index.php"> Register </b></a></center>
                             </div>
 
                         </div>
