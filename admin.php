@@ -1,5 +1,7 @@
-
-<?php include('header.php');?>
+<?php 
+    include('header.php');
+    require_once './db/dbConnection.php';
+?>
 <style type="text/css">
 	#suggestwords{
 		margin-left: 0%;
@@ -7,16 +9,13 @@
 	}
 	#redcontent2{
 
-		width: 150%;
+		width: 175%;
 	}
 
 	#redcontent1{
 
 		width: 100%;
 	}
-  #tab15{ 
-    padding-left: 52%; 
-  }
 </style>
 <body>
 
@@ -27,38 +26,37 @@
         <div class="card-panel blue lighten-5">
           
                             <div class="header">
-                                <h4 class="title  blue lighten-4 center">Suggest  Word </h4>
+                                <h4 class="title  blue lighten-4 center">All the words Added by users</h4>
                             </div>
 
           <div class="row">
-          
-            <p><center>You can suggest maximum 3 words : <b> </b></center></p><br>
-
-
-            <form action="fileupload.php" method="POST">
-          <div class="form-group ">
-                       Word 1 :
-                    <input id="word1" name="word1" type="text" value="<?php //echo $email?>">
-                       word 2 :
-                    <input id="word2" name="word2" type="text" value="<?php //echo $address?>">
-                       word 3 :
-                    <input id="word3" name="word3" type="text" value="<?php //echo $phone?>">
-                    
-         </div>
-
-
-          <div class="form-group center">
-              <input id="submit_word" type='submit' class="waves-effect blue waves-light btn " name='submit_word' value='submit' />
-            </div>
-        </form>
-                     
+              <?php 
+                $sql = "SELECT * FROM scrab WHERE status='NO';";
+                $result = $conn->query($sql);    
+                    if ($result->num_rows > 0) {
+                        
+                        while ($row = $result->fetch_assoc()) {
+                            
+                           echo'<div class="col-md-12">
+                                <div class="col-md-2">'; 
+                           echo '<p>'.$row["word"].'</p>';
+                           echo'</div>';
+                           echo '<div class="col-md-10">';
+                           echo '<input id="accept" type="button" class="waves-effect blue waves-light btn " name="accept" value="Accept" />';
+                           echo '<input id="reject" type="button" class="waves-effect reject waves-light btn " name="reject" value="Reject" />';
+                        
+                           echo'</div>
+                            </div>';
+                           echo '<br>';
+                        }
+                    }
+              ?>    
           </div>
         
         </div>
     </div>
     </div>
-
-  <div id="redcontent2">
+    <div id="redcontent2">
 <div class="col s6" >
         <div class="card-panel blue lighten-5">
           
@@ -106,17 +104,12 @@
 								}
 							
 								xml_parser_free( $parser );
-              
-                foreach( $g_books as $book )
-                {
-                  for($i=0;$i<8;$i++){
-              echo $book['COMBINATION'].'         ,';
-                  }
-                  echo '<br>';
-                }
-               
 								 
-                 
+								foreach( $g_books as $book )
+								{
+								echo $book['COMBINATION'].'<br>';
+								}
+
 								?>
 
                             	
@@ -145,30 +138,34 @@
 </html>
 
 <?php
- 
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$word1 =$_POST['word1'];
-$word2 =$_POST['word2'];
-$word3 =$_POST['word3'];
 
+ if(isset($_POST['change_profile'])){
 
+      $errors=array();
+      $allowed_e=array('txt');
 
-if(isset($_POST['submit_word'])){
+      $file_name=$_FILES['image']['name'];
+      $file_e=strtolower(pathinfo($file_name,PATHINFO_EXTENSION));
+      $file_s=$_FILES['image']['size'];
+      $file_tmp=$_FILES['image']['tmp_name'];
 
-if(empty($word1) && empty($word2) && empty($word3)){
-  echo 'please add words';
+      if(in_array($file_e,$allowed_e)===false){
+        $errors[]='This file extension is not allowed';
+      }
+      
+      if(empty($errors)){
+        move_uploaded_file($file_tmp, 'files/'.$file_name);
+        $image_up='files/'.$file_name;
 
-}else{
-  require('connection.php');
-  $sql8="INSERT INTO suggest_word(word1,word2,word3)VALUES('".$word1."','".$word2."','".$word3."')";
+        echo 'Success';
+      }else{
+        foreach ($errors as $error) {
+          echo $error.'<br>';
+        }
+      }
 
-  if(mysqli_query($con,$sql8)){ 
-    echo 'success';
-  }
- 
     }
 
-  }//submit
-}
+
 ?>
 
