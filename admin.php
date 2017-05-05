@@ -1,6 +1,7 @@
 <?php 
     include('header.php');
-    require_once './db/dbConnection.php';
+ //   require_once './db/dbConnection.php';
+
 ?>
 <style type="text/css">
 	#suggestwords{
@@ -105,10 +106,13 @@
 							
 								xml_parser_free( $parser );
 								 
-								foreach( $g_books as $book )
-								{
-								echo $book['COMBINATION'].'<br>';
-								}
+								 foreach( $g_books as $book )
+                {
+                  for($i=0;$i<8;$i++){
+              echo $book['COMBINATION'].'         ,';
+                  }
+                  echo '<br>';
+                }
 
 								?>
 
@@ -140,7 +144,7 @@
 <?php
 
  if(isset($_POST['change_profile'])){
-
+/*
       $errors=array();
       $allowed_e=array('txt');
 
@@ -163,7 +167,7 @@
           echo $error.'<br>';
         }
       }
-
+*/
     }
 
 
