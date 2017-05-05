@@ -32,8 +32,20 @@
 
           <div class="row">
               <?php 
+               echo'<div class="col-md-12">
+                                <div class="col-md-2">'; 
+                           echo '<p>'.$row["word"].'</p>';
+                           echo'</div>';
+                           echo '<div class="col-md-10">';
+                           echo '<input id="accept" type="button" class="waves-effect blue waves-light btn " name="accept" value="Accept" />';
+                           echo '<input id="reject" type="button" class="waves-effect reject waves-light btn " name="reject" value="Reject" />';
+                        
+                           echo'</div>
+                            </div>';
+                           echo '<br>';
+              /*
                 $sql = "SELECT * FROM scrab WHERE status='NO';";
-                $result = $conn->query($sql);    
+               $result = $conn->query($sql);    
                     if ($result->num_rows > 0) {
                         
                         while ($row = $result->fetch_assoc()) {
@@ -51,6 +63,7 @@
                            echo '<br>';
                         }
                     }
+                    */
               ?>    
           </div>
         
