@@ -37,6 +37,7 @@
                            echo '<p>'.$row["word"].'</p>';
                            echo'</div>';
                            echo '<div class="col-md-10">';
+                           echo 'Word(user1 entered)';
                            echo '<input id="accept" type="button" class="waves-effect blue waves-light btn " name="accept" value="Accept" />';
                            echo '<input id="reject" type="button" class="waves-effect reject waves-light btn " name="reject" value="Reject" />';
                         
